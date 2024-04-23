@@ -31,7 +31,7 @@
                     Font: =Font.'Courier New'
                     Height: =Parent.Height
                     Size: =20
-                    Text: =User().FullName
+                    Text: ="Cappa van mook"
                     Width: =Parent.Width
                     ZIndex: =1
 
