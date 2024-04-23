@@ -1,0 +1,47 @@
+{
+  "92aeee98-db2c-4271-b139-935ddc1985a7": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1682/1.0.1682.3677/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://xxpn1.sharepoint.com/sites/testpowerapp": {
+        "dataSources": {
+          "Daily Report": {
+            "tableName": "291ff4b0-2d77-4b2b-8879-2b1c99daa73a"
+          },
+          "Feul Report": {
+            "tableName": "956009d6-0bf6-41ec-9bae-584af9227833"
+          },
+          "Outlook next": {
+            "tableName": "f1a85939-821b-4af6-83d9-e217a9461cbc"
+          },
+          "Weather Report": {
+            "tableName": "e8275f29-43a4-4268-b03d-0cc9ee1ae293"
+          },
+          "Work details": {
+            "tableName": "d6fa76ef-e4fe-4ce7-ab72-adfeec50f028"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Daily Report",
+      "Weather Report",
+      "Feul Report",
+      "Work details",
+      "Outlook next"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "92aeee98-db2c-4271-b139-935ddc1985a7"
+  }
+}

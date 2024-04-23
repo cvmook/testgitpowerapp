@@ -1,0 +1,454 @@
+"'Weather report' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+
+    Canvas1_1 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =RectQuickActionBar1.Y + RectQuickActionBar1.Height
+        ZIndex: =3
+
+        DataCard1_1 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(129, 133, 137, 1)
+            Height: =768
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Container6_2 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.None
+                Height: =100
+                X: =100
+                ZIndex: =2
+
+                Label6_2 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(255, 255, 255, 1)
+                    Font: =Font.'Courier New'
+                    Height: =Parent.Height
+                    Size: =20
+                    Text: =User().FullName
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+            Label8_1 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Font: =Font.'Courier New'
+                FontWeight: =FontWeight.Bold
+                Size: =20
+                Text: ="Weather report"
+                Width: =240
+                X: =100
+                Y: =118
+                ZIndex: =3
+
+            Container7_1 As groupContainer.manualLayoutContainer:
+                Height: =522
+                RadiusBottomLeft: =25
+                RadiusBottomRight: =25
+                RadiusTopLeft: =25
+                RadiusTopRight: =25
+                Width: =1166
+                X: =100
+                Y: =158
+                ZIndex: =4
+
+                Form2 As form:
+                    DataSource: ='Weather Report'
+                    DefaultMode: =FormMode.New
+                    Fill: =RGBA(229, 228, 226, 1)
+                    Height: =522
+                    NumberOfColumns: =1
+                    Width: =1166
+                    ZIndex: =1
+
+                    Wind_DataCard2 As typedDataCard.textualEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Wind"
+                        Default: =ThisItem.Wind
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Weather Report'],DataSourceInfo.DisplayName,Wind)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@'Weather Report'], DataSourceInfo.MaxLength, Wind)
+                        Required: =true
+                        Update: =DataCardValue22.Text
+                        Width: =1166
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                        DataCardKey24 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue22 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =25
+                            RadiusBottomRight: =25
+                            RadiusTopLeft: =25
+                            RadiusTopRight: =25
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey24.Y + DataCardKey24.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage24 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue22.Y + DataCardValue22.Height
+                            ZIndex: =3
+
+                        StarVisible24 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(255, 0, 0, 1)
+                            Height: =DataCardKey24.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey24.Y
+                            ZIndex: =4
+
+                    "'Sea State_DataCard2' As typedDataCard.textualEditCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="SeaState"
+                        Default: =ThisItem.'Sea State'
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Weather Report'],DataSourceInfo.DisplayName,'Sea State')
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@'Weather Report'], DataSourceInfo.MaxLength, 'Sea State')
+                        Required: =true
+                        Update: =DataCardValue23.Text
+                        Width: =1166
+                        X: =0
+                        Y: =1
+                        ZIndex: =2
+
+                        DataCardKey25 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue23 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =25
+                            RadiusBottomRight: =25
+                            RadiusTopLeft: =25
+                            RadiusTopRight: =25
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey25.Y + DataCardKey25.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage25 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue23.Y + DataCardValue23.Height
+                            ZIndex: =3
+
+                        StarVisible25 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(255, 0, 0, 1)
+                            Height: =DataCardKey25.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey25.Y
+                            ZIndex: =4
+
+                    Swell_DataCard2 As typedDataCard.textualEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Swell"
+                        Default: =ThisItem.Swell
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Weather Report'],DataSourceInfo.DisplayName,Swell)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@'Weather Report'], DataSourceInfo.MaxLength, Swell)
+                        Required: =true
+                        Update: =DataCardValue24.Text
+                        Width: =1166
+                        X: =0
+                        Y: =2
+                        ZIndex: =2
+
+                        DataCardKey26 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue24 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =25
+                            RadiusBottomRight: =25
+                            RadiusTopLeft: =25
+                            RadiusTopRight: =25
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey26.Y + DataCardKey26.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage26 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue24.Y + DataCardValue24.Height
+                            ZIndex: =3
+
+                        StarVisible26 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(255, 0, 0, 1)
+                            Height: =DataCardKey26.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey26.Y
+                            ZIndex: =4
+
+                    Weather_DataCard2 As typedDataCard.textualEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Weather"
+                        Default: =ThisItem.Weather
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Weather Report'],DataSourceInfo.DisplayName,Weather)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@'Weather Report'], DataSourceInfo.MaxLength, Weather)
+                        Required: =true
+                        Update: =DataCardValue25.Text
+                        Width: =1166
+                        X: =0
+                        Y: =3
+                        ZIndex: =2
+
+                        DataCardKey27 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue25 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =25
+                            RadiusBottomRight: =25
+                            RadiusTopLeft: =25
+                            RadiusTopRight: =25
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey27.Y + DataCardKey27.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage27 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue25.Y + DataCardValue25.Height
+                            ZIndex: =3
+
+                        StarVisible27 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(255, 0, 0, 1)
+                            Height: =DataCardKey27.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey27.Y
+                            ZIndex: =4
+
+                    Pressure_DataCard2 As typedDataCard.textualEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Pressure"
+                        Default: =ThisItem.Pressure
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Weather Report'],DataSourceInfo.DisplayName,Pressure)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@'Weather Report'], DataSourceInfo.MaxLength, Pressure)
+                        Required: =true
+                        Update: =DataCardValue26.Text
+                        Width: =1166
+                        X: =0
+                        Y: =4
+                        ZIndex: =2
+
+                        DataCardKey28 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue26 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Format: =TextFormat.Number
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =25
+                            RadiusBottomRight: =25
+                            RadiusTopLeft: =25
+                            RadiusTopRight: =25
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey28.Y + DataCardKey28.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage28 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue26.Y + DataCardValue26.Height
+                            ZIndex: =3
+
+                        StarVisible28 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(255, 0, 0, 1)
+                            Height: =DataCardKey28.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey28.Y
+                            ZIndex: =4
+
+            Button1_1 As button:
+                Fill: =RGBA(97, 138, 187, 1)
+                Height: =55
+                OnSelect: |-
+                    =If(
+                         IsBlank(DataCardValue22.Text) || IsBlank(DataCardValue23.Text) || IsBlank(DataCardValue24.Text) || IsBlank(DataCardValue25.Text) || IsBlank(DataCardValue26.Text),
+                        Notify("Please fill in all required fields", NotificationType.Error),
+                        SubmitForm(Form2),
+                        Navigate(Outlook, ScreenTransition.Fade),
+                        ResetForm(Form2)
+                    );
+                Text: ="Next Step"
+                Width: =168
+                X: =1098
+                Y: =702
+                ZIndex: =13
+
+    Image2_1 As image:
+        BorderColor: =RGBA(253, 186, 33, 1)
+        BorderThickness: =2
+        Image: =User().Image
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =102
+        X: =8
+        Y: =5
+        ZIndex: =4
+

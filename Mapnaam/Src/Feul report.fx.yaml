@@ -1,0 +1,589 @@
+"'Feul report' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+
+    Canvas1_2 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =RectQuickActionBar1.Y + RectQuickActionBar1.Height
+        ZIndex: =3
+
+        DataCard1_2 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(129, 133, 137, 1)
+            Height: =768
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Container6_4 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.None
+                Height: =100
+                X: =100
+                ZIndex: =2
+
+                Label6_4 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(255, 255, 255, 1)
+                    Font: =Font.'Courier New'
+                    Height: =Parent.Height
+                    Size: =20
+                    Text: =User().FullName
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+            Label8_2 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Font: =Font.'Courier New'
+                FontWeight: =FontWeight.Bold
+                Size: =20
+                Text: ="Feul report"
+                Width: =240
+                X: =100
+                Y: =136
+                ZIndex: =3
+
+            Container7_2 As groupContainer.manualLayoutContainer:
+                Height: =480
+                RadiusBottomLeft: =25
+                RadiusBottomRight: =25
+                RadiusTopLeft: =25
+                RadiusTopRight: =25
+                Width: =1166
+                X: =100
+                Y: =176
+                ZIndex: =4
+
+                Feul_report As form:
+                    DataSource: ='Feul Report'
+                    DefaultMode: =FormMode.New
+                    Fill: =RGBA(229, 228, 226, 1)
+                    Height: =480
+                    NumberOfColumns: =2
+                    Width: =1166
+                    ZIndex: =1
+
+                    "'Feul consumed last 24hr_DataCard1' As typedDataCard.numberEditCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Feulconsumedlast24hr"
+                        Default: =ThisItem.'Feul consumed last 24hr'
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Feul Report'],DataSourceInfo.DisplayName,'Feul consumed last 24hr')
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =true
+                        Update: =Value(DataCardValue54.Text)
+                        Width: =583
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                        DataCardKey58 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue54 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Format: =TextFormat.Number
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =25
+                            RadiusBottomRight: =25
+                            RadiusTopLeft: =25
+                            RadiusTopRight: =25
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey58.Y + DataCardKey58.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage58 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue54.Y + DataCardValue54.Height
+                            ZIndex: =3
+
+                        StarVisible58 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(255, 0, 0, 1)
+                            Height: =DataCardKey58.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey58.Y
+                            ZIndex: =4
+
+                    "'Feul rob_DataCard1' As typedDataCard.numberEditCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Feulrob"
+                        Default: =ThisItem.'Feul rob'
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Feul Report'],DataSourceInfo.DisplayName,'Feul rob')
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =true
+                        Update: =Value(DataCardValue55.Text)
+                        Width: =583
+                        X: =1
+                        Y: =0
+                        ZIndex: =2
+
+                        DataCardKey59 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue55 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Format: =TextFormat.Number
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =25
+                            RadiusBottomRight: =25
+                            RadiusTopLeft: =25
+                            RadiusTopRight: =25
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey59.Y + DataCardKey59.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage59 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue55.Y + DataCardValue55.Height
+                            ZIndex: =3
+
+                        StarVisible59 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(255, 0, 0, 1)
+                            Height: =DataCardKey59.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey59.Y
+                            ZIndex: =4
+
+                    "'Lub oil consumed last 24hr_DataCard1' As typedDataCard.numberEditCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Luboilconsumedlast24hr"
+                        Default: =ThisItem.'Lub oil consumed last 24hr'
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Feul Report'],DataSourceInfo.DisplayName,'Lub oil consumed last 24hr')
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =true
+                        Update: =Value(DataCardValue56.Text)
+                        Width: =583
+                        X: =0
+                        Y: =1
+                        ZIndex: =2
+
+                        DataCardKey60 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue56 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Format: =TextFormat.Number
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =25
+                            RadiusBottomRight: =25
+                            RadiusTopLeft: =25
+                            RadiusTopRight: =25
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey60.Y + DataCardKey60.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage60 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue56.Y + DataCardValue56.Height
+                            ZIndex: =3
+
+                        StarVisible60 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(255, 0, 0, 1)
+                            Height: =DataCardKey60.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey60.Y
+                            ZIndex: =4
+
+                    "'Lub oil rob_DataCard1' As typedDataCard.numberEditCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Luboilrob"
+                        Default: =ThisItem.'Lub oil rob'
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Feul Report'],DataSourceInfo.DisplayName,'Lub oil rob')
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =true
+                        Update: =Value(DataCardValue57.Text)
+                        Width: =583
+                        X: =1
+                        Y: =1
+                        ZIndex: =2
+
+                        DataCardKey61 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue57 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Format: =TextFormat.Number
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =25
+                            RadiusBottomRight: =25
+                            RadiusTopLeft: =25
+                            RadiusTopRight: =25
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey61.Y + DataCardKey61.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage61 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue57.Y + DataCardValue57.Height
+                            ZIndex: =3
+
+                        StarVisible61 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(255, 0, 0, 1)
+                            Height: =DataCardKey61.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey61.Y
+                            ZIndex: =4
+
+                    "'F. water consumed last 24hr_DataCard1' As typedDataCard.numberEditCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="F_x002e_waterconsumedlast24hr"
+                        Default: =ThisItem.'F. water consumed last 24hr'
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Feul Report'],DataSourceInfo.DisplayName,'F. water consumed last 24hr')
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =true
+                        Update: =Value(DataCardValue58.Text)
+                        Width: =583
+                        X: =0
+                        Y: =2
+                        ZIndex: =2
+
+                        DataCardKey62 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue58 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Format: =TextFormat.Number
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =25
+                            RadiusBottomRight: =25
+                            RadiusTopLeft: =25
+                            RadiusTopRight: =25
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey62.Y + DataCardKey62.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage62 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue58.Y + DataCardValue58.Height
+                            ZIndex: =3
+
+                        StarVisible62 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(255, 0, 0, 1)
+                            Height: =DataCardKey62.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey62.Y
+                            ZIndex: =4
+
+                    "'F. water rob_DataCard1' As typedDataCard.numberEditCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="F_x002e_waterrob"
+                        Default: =ThisItem.'F. water rob'
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Feul Report'],DataSourceInfo.DisplayName,'F. water rob')
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =true
+                        Update: =Value(DataCardValue59.Text)
+                        Width: =583
+                        X: =1
+                        Y: =2
+                        ZIndex: =2
+
+                        DataCardKey63 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue59 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Format: =TextFormat.Number
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =25
+                            RadiusBottomRight: =25
+                            RadiusTopLeft: =25
+                            RadiusTopRight: =25
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey63.Y + DataCardKey63.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage63 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue59.Y + DataCardValue59.Height
+                            ZIndex: =3
+
+                        StarVisible63 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(255, 0, 0, 1)
+                            Height: =DataCardKey63.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey63.Y
+                            ZIndex: =4
+
+                    Sludge_DataCard1 As typedDataCard.numberEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Sludge"
+                        Default: =ThisItem.Sludge
+                        DisplayMode: =Parent.DisplayMode
+                        DisplayName: =DataSourceInfo([@'Feul Report'],DataSourceInfo.DisplayName,Sludge)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =true
+                        Update: =Value(DataCardValue60.Text)
+                        Width: =583
+                        X: =0
+                        Y: =3
+                        ZIndex: =2
+
+                        DataCardKey64 As label:
+                            AutoHeight: =true
+                            Color: =RGBA(0, 0, 0, 1)
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue60 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Format: =TextFormat.Number
+                            HoverFill: =RGBA(255, 255, 255, 1)
+                            PaddingLeft: =5
+                            RadiusBottomLeft: =25
+                            RadiusBottomRight: =25
+                            RadiusTopLeft: =25
+                            RadiusTopRight: =25
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey64.Y + DataCardKey64.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage64 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue60.Y + DataCardValue60.Height
+                            ZIndex: =3
+
+                        StarVisible64 As label:
+                            Align: =Align.Center
+                            Color: =RGBA(255, 0, 0, 1)
+                            Height: =DataCardKey64.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey64.Y
+                            ZIndex: =4
+
+            Button1_2 As button:
+                Fill: =RGBA(97, 138, 187, 1)
+                Height: =55
+                OnSelect: |-
+                    =If(
+                         IsBlank(DataCardValue54.Text) || IsBlank(DataCardValue55.Text) || IsBlank(DataCardValue56.Text) || IsBlank(DataCardValue57.Text) || IsBlank(DataCardValue58.Text 
+                         || IsBlank(DataCardValue59.Text) || IsBlank(DataCardValue60.Text)),
+                        Notify("Please fill in all required fields", NotificationType.Error),
+                        SubmitForm(Feul_report),
+                        Navigate('Work Details', ScreenTransition.Fade),
+                         ResetForm(Feul_report)
+                    );
+                Text: ="Next Step"
+                Width: =168
+                X: =1098
+                Y: =681
+                ZIndex: =13
+
+            Image2_2 As image:
+                BorderColor: =RGBA(253, 186, 33, 1)
+                BorderThickness: =2
+                Image: =User().Image
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                Width: =102
+                X: =8
+                Y: =5
+                ZIndex: =14
+
